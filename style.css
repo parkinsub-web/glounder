@@ -1,0 +1,337 @@
+/* CSS Design Guide: High-end, Minimalist, Visual First */
+
+:root {
+    --primary-white: #ffffff;
+    --accent-blue: #e3f2fd;
+    --light-grey: #f5f5f5;
+    --dark-grey: #333333;
+    --text-color: #1a1a1a;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    --transition-speed: 0.4s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-white);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.serif {
+    font-family: var(--font-serif);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 2.5rem 0;
+    transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+header.scrolled {
+    background-color: var(--primary-white);
+    padding: 1.2rem 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+header.scrolled .logo a {
+    color: var(--text-color);
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 0.6;
+}
+
+/* Hero Section with Canvas */
+.hero-section {
+    position: relative;
+    width: 100%;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.main-copy {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 15px rgba(255, 255, 255, 0.8);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.btn-primary {
+    background-color: var(--text-color);
+    color: var(--primary-white);
+}
+
+.btn-primary:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.scroll-height {
+    height: 300vh; /* Control how much scrolling maps to the sequence */
+}
+
+/* Story Section */
+.story-section {
+    padding: 10rem 0;
+    background-color: var(--primary-white);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    opacity: 0.8;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.story-card {
+    background-color: var(--light-grey);
+    padding: 4rem 3rem;
+    transition: transform 0.5s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--accent-blue);
+    opacity: 0.5;
+    margin-bottom: 1.5rem;
+}
+
+.story-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.story-card p {
+    color: var(--dark-grey);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Product Section */
+.product-section {
+    padding-bottom: 10rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.product-item {
+    transition: opacity 0.53s ease;
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background-color: var(--light-grey);
+    margin-bottom: 2rem;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-item:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+}
+
+.btn-add-cart {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    padding: 0.8rem 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+    background-color: var(--text-color);
+    color: var(--primary-white);
+}
+
+/* Footer */
+footer {
+    padding: 5rem 0;
+    border-top: 1px solid var(--light-grey);
+    background-color: var(--primary-white);
+    text-align: center;
+}
+
+.footer-inner p {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+    .story-grid, .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .nav-menu ul {
+        gap: 1.5rem;
+    }
+    .story-grid, .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 0 24px;
+    }
+    .main-copy {
+        font-size: 3rem;
+    }
+}
