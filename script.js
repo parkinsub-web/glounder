@@ -49,7 +49,7 @@ function initHeroSequence() {
     // For now, let's set up the structure.
 
     const img = new Image();
-    img.src = 'beforeimage.png'; // Primary background
+    img.src = 'images/hero.jpg'; // Primary background
 
     img.onload = () => {
         updateCanvasSize();

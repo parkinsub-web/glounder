@@ -123,16 +123,18 @@ header.scrolled .logo a {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 10;
 }
 
 .main-copy {
     font-family: var(--font-serif);
     font-size: clamp(2.5rem, 6vw, 5rem);
-    color: var(--text-color);
+    color: var(--primary-white);
     text-align: center;
     line-height: 1.1;
     margin-bottom: 2rem;
-    text-shadow: 0 4px 15px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .btn {
@@ -149,12 +151,12 @@ header.scrolled .logo a {
 }
 
 .btn-primary {
-    background-color: var(--text-color);
-    color: var(--primary-white);
+    background-color: var(--primary-white);
+    color: var(--text-color);
 }
 
 .btn-primary:hover {
-    background-color: #000;
+    background-color: #f0f0f0;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
