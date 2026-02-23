@@ -381,6 +381,7 @@ footer {
     .story-grid,
     .product-grid {
         grid-template-columns: 1fr;
+
     }
 
     .container {
