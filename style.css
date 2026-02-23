@@ -137,6 +137,18 @@ header.scrolled .logo a {
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
+.sub-copy {
+    font-family: var(--font-sans);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: var(--primary-white);
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
 .btn {
     display: inline-block;
     padding: 1.2rem 3rem;
