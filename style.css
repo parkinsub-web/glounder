@@ -49,7 +49,7 @@ header {
 header.scrolled {
     background-color: var(--primary-white);
     padding: 1.2rem 0;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .header-inner {
@@ -156,11 +156,12 @@ header.scrolled .logo a {
 .btn-primary:hover {
     background-color: #000;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .scroll-height {
-    height: 300vh; /* Control how much scrolling maps to the sequence */
+    height: 300vh;
+    /* Control how much scrolling maps to the sequence */
 }
 
 /* Story Section */
@@ -194,6 +195,24 @@ header.scrolled .logo a {
 
 .story-card:hover {
     transform: translateY(-10px);
+}
+
+.story-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.story-card:hover .story-image img {
+    transform: scale(1.05);
 }
 
 .card-icon {
@@ -312,7 +331,9 @@ footer {
 }
 
 @media (max-width: 1024px) {
-    .story-grid, .product-grid {
+
+    .story-grid,
+    .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -322,15 +343,20 @@ footer {
         flex-direction: column;
         gap: 1.5rem;
     }
+
     .nav-menu ul {
         gap: 1.5rem;
     }
-    .story-grid, .product-grid {
+
+    .story-grid,
+    .product-grid {
         grid-template-columns: 1fr;
     }
+
     .container {
         padding: 0 24px;
     }
+
     .main-copy {
         font-size: 3rem;
     }
